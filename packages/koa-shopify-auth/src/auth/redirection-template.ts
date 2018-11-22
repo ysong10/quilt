@@ -1,4 +1,4 @@
-export default function redirectionScript({origin, redirectTo}) {
+export default function redirectionTemplate({origin, redirectTo}) {
   return `
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
