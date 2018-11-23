@@ -54,7 +54,7 @@ export default function createShopifyAuth(options: OAuthStartOptions) {
     ...options,
   };
 
-  const {prefix} = config;
+  const {prefix, apiKey} = config;
 
   const oAuthStartPath = `${prefix}/auth`;
   const oAuthCallbackPath = `${oAuthStartPath}/callback`;
@@ -86,6 +86,7 @@ export default function createShopifyAuth(options: OAuthStartOptions) {
 
   return async function shopifyAuth(ctx: Context, next: NextFunction) {
     ctx.state.authRoute = oAuthStartPath;
+    ctx.state.apiKey = apiKey;
 
     if (
       ctx.path === oAuthStartPath &&
