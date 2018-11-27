@@ -12,6 +12,7 @@ const validateHmac = require.requireMock('../validate-hmac');
 const baseConfig: AuthConfig = {
   apiKey: 'myapikey',
   secret: 'mysecret',
+  appName: 'test app',
 };
 
 const nonce = 'totallyrealnonce';
